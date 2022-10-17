@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - name: Make a new env file
+      - name: Make a back-end env file
         uses: SpicyPizza/create-envfile@v1
         with:
           envkey_POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
@@ -15,5 +15,11 @@ jobs:
           envkey_DATABASE_URL: ${{ secrets.DATABASE_URL }}
           directory: ./back-end
           file_name: .env.test
+      - name: Make a front-end env file 
+        uses: SpicyPizza/create-envfile@v1.3
+        with: 
+          envkey_REACT_APP_BASE_URL: ${{ secrets.REACT_APP_BASE_URL }}
+          directory: ./front-end
+          file_name: .env.test 
       - name: Run tests
         run: docker-compose -f docker-compose-test.yml run node_driven_ops_app npm run test 
