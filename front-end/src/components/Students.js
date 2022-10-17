@@ -26,7 +26,7 @@ export default function Students() {
 
     return (
      <>
-     { students.length ? students.map(student => <h1 key={Math.random()}>{student}</h1>) : 'Carregando os estudantes...' }
+     { students.length ? students.map(student => <h1 key={Math.random()}>{student.name}</h1>) : 'Carregando os estudantes...' }
      </>   
     ); 
 }
