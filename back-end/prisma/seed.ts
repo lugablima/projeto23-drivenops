@@ -4,9 +4,9 @@ async function main() {
   console.log('Running Seed...');
 
   const students = [
-    { name: 'Frank Rocha' },
-    { name: 'Bruna Hamori' },
-    { name: 'Leandro Simoes' }
+    { name: 'João Silva' },
+    { name: 'Maria Oliveira' },
+    { name: 'Luiz Augusto' }
   ];
 
   await prisma.student.createMany({
