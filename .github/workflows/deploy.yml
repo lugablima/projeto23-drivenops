@@ -5,7 +5,7 @@ on:
       - main
 jobs:
   DeployAWS:
-    runs_on: self-hosted
+    runs-on: self-hosted
     steps:
       - name: Check out repository code 
         uses: actions/checkout@v3
